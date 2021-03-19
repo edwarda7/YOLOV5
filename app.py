@@ -24,7 +24,7 @@ class Predict:
     
     @staticmethod
     def get_image_from_upload():
-        uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
+       
         if uploaded_file is not None:
             return st.image(uploaded_file)
         return None
