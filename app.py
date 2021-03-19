@@ -1,13 +1,13 @@
 
+
 import torch
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='best.pt')
-model = model.autoshape()  # for PIL/cv2/np inputs and NMS
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='/content/best.pt')
 
 from PIL import Image
 
 # Images
-img1 = Image.open('/content/train/images/BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg')
+img1 = Image.open('/content/train/images/BloodImage_00002_jpg.rf.8abfeee935647b859f251b4ea8fb05b6.jpg')
 
 results = model(img1, size=320)
 
