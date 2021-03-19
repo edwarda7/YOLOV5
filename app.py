@@ -5,10 +5,11 @@ import torch
 from PIL import Image
 
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
 
 
 x = "best.pt"
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
+
 
 
 class Predict:
