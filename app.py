@@ -32,8 +32,8 @@ class Predict:
         # includes NMS
         result.print()  
         result.save() 
-        #st.image("results/uploaded_file")
-        st.image(results.render())
+        st.image("results/uploaded_file")
+        #st.image(results.render())
  
 predictor = Predict(x)
 
