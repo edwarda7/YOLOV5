@@ -42,8 +42,13 @@ class Predict:
             results = model(img, size=160)  # includes NMS
             results.print()  
             results.save()
-            st.image("/results/*.jpg")
+
+       
+        for imageName in glob.glob('/results/*.jpg'): 
+            display(Image(filename=imageName))
+            st.image(Image(filename=imageName)
  
 
 if __name__=='__main__':
     predictor = Predict(x)
+
