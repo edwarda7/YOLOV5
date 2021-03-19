@@ -1,1 +1,2 @@
 libgl1-mesa-dev
+libgthread-2.0.so.0:
