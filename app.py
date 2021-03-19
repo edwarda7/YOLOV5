@@ -3,12 +3,12 @@ from urllib.request import urlretrieve
 import torch
 
 from PIL import Image
-
+x = "best.pt"
 
 
 class Predict:
-    def __init__(self, "best.pt"):
-        model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= "best.pt")
+    def __init__(self, x):
+        model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
         if self.img is not None:
             self.display_output()
             
@@ -29,7 +29,7 @@ class Predict:
         result.save() 
         st.image("results/uploaded_file")
  
-predictor = Predict("best.pt")
+predictor = Predict(x)
 
 
 
