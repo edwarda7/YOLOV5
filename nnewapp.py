@@ -27,6 +27,9 @@ class Predict:
     @staticmethod
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
+          if uploaded_file is not None:
+            return PILImage.create((uploaded_file))
+        return None
         
         
         
@@ -39,7 +42,7 @@ class Predict:
             results.save()
 
        
-        for imageName in glob.glob('uploaded_file'): #assuming JPG
+        for imageName in glob.glob('/results/*.jpg'): 
             display(Image(filename=imageName))
             st.image(imageName)
  
