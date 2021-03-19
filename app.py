@@ -34,8 +34,9 @@ class Predict:
         result.save() 
         st.image("results/uploaded_file")
         #st.image(results.render())
- 
-predictor = Predict(x)
+
+if __name__=='__main__': 
+    predictor = Predict(x)
 
 
 
