@@ -46,7 +46,7 @@ class Predict:
        
         for imageName in glob.glob('/results/*.jpg'): 
             display(Image(filename=imageName))
-            st.image(imageName)
+        
  
 
 if __name__=='__main__':
