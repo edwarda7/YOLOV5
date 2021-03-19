@@ -3,8 +3,7 @@ from urllib.request import urlretrieve
 import torch
 
 from PIL import Image
-from PIL import *
-import PIL.Image
+
 
 
 
@@ -24,7 +23,7 @@ class Predict:
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
-            return PILImage.create((uploaded_file))
+            return st.image(uploaded_file)
         return None
 
     def display_output(self):
