@@ -4,13 +4,17 @@ import torch
 
 from PIL import Image
 
+from PIL import *
+import PIL.Image
+
+
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='best.pt')
         
             
 
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
      
-PILImage.create((uploaded_file))
+st.image(uploaded_file)
 
 
 
