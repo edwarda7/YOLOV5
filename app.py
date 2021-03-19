@@ -30,9 +30,6 @@ class Predict:
 
 
    
-if __name__=='__main__':
-    predictor = Predict(best.pt)
-    
 
 
 
