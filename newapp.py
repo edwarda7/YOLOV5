@@ -5,7 +5,7 @@ from PIL import Image
 from IPython.display import Image, display
 
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model=filename)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model="best.pt")
 
 
 
