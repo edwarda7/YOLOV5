@@ -1,3 +1,6 @@
+from fastai.vision.widgets import *
+from fastai.vision.all import *
+
 import streamlit as st
 from urllib.request import urlretrieve
 import torch
