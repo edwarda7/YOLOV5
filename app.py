@@ -21,13 +21,7 @@ class Predict:
         self.display_output()
             
             
-    
-    @staticmethod
-    def get_image_from_upload():
-       
-        if uploaded_file is not None:
-            return st.image(uploaded_file)
-        return None
+  
 
     def display_output(self):
         # Inference
