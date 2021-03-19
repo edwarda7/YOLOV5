@@ -30,7 +30,7 @@ class Predict:
 
     def display_output(self):
         # Inference
-        result = model(img1, size=640)  # includes NMS
+        result = model(uploaded_file, size=640)  # includes NMS
         result.print()  
         result.save() 
         st.image("results/uploaded_file")
