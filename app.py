@@ -26,10 +26,10 @@ class Predict:
 
     def display_output(self):
         for i in range(len(im_paths)):
-        img = Image.open(im_paths[i])
-        results = model(img, size=160)  # includes NMS
-        results.print()  
-        results.save()
+            img = Image.open(im_paths[i])
+            results = model(img, size=160)  # includes NMS
+            results.print()  
+            results.save()
 
 if __name__=='__main__': 
     predictor = Predict(x)
