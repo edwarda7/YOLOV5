@@ -9,9 +9,9 @@ x = "best.pt"
 class Predict:
     def __init__(self, x):
         model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
-        if self.img is not None:
-            self.img = self.get_image_from_upload()
-            self.display_output()
+     
+        self.img = self.get_image_from_upload()
+        self.display_output()
             
             
     
