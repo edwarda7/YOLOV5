@@ -15,6 +15,7 @@ x = "best.pt"
 model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
 model = model.autoshape()
 
+uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
 
 
@@ -30,7 +31,6 @@ class Predict:
     
     @staticmethod
     def get_image_from_upload():
-        uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
