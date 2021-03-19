@@ -37,6 +37,8 @@ class Predict:
     def display_output(self):
         result = model(uploaded_file, size=640)
         result.save() 
+        result.print()
+        st.write(result.print())
         result.render()
 
         st.image(result.render())
