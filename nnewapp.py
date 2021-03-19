@@ -45,7 +45,7 @@ class Predict:
 
        
         for imageName in glob.glob('uploaded_file'): #assuming JPG
-            st.image(display(Image(filename=imageName)))
+            display(Image(filename=imageName))
  
 
 if __name__=='__main__':
