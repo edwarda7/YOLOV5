@@ -29,7 +29,7 @@ class Predict:
         result.save() 
         st.image("results/uploaded_file")
  
-predictor = Predict(filename)
+predictor = Predict("best.pt")
 
 
 
