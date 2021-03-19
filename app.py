@@ -26,7 +26,9 @@ class Predict:
     def display_output(self):
         # Inference
         
-        result = model(uploaded_file, size=720)  # includes NMS
+        result = model(uploaded_file, size=720)
+        results.render()  # updates results.imgs with boxes and labels
+        # includes NMS
         result.print()  
         result.save() 
         st.image("results/uploaded_file")
