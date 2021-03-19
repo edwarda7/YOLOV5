@@ -17,7 +17,7 @@ uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
 class Predict:
     def __init__(self, filename):
-        self.learn_inference = load_learner(filename)
+        model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
@@ -32,10 +32,10 @@ class Predict:
         return None
 
     def display_output(self):
-        st.image(self.img.to_thumb(500,500), caption='Uploaded Image')
-        pred, pred_idx, probs = self.learn_inference.predict(self.img)
-        st.write(f'Prediction: {pred} red blood cell; Probability: {probs[pred_idx]:.04f}')
+        result = model(uploaded_file, size=640)
+        result.save() 
 
+        st.image("results/uploaded_file")
  
 
 if __name__=='__main__':
