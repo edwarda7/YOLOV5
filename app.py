@@ -16,6 +16,7 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
 model = model.autoshape()
 uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
+im_paths = glob.glob('BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg')
 
 
 
