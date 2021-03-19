@@ -1,3 +1,4 @@
+from fastai import *
 from fastai.vision.widgets import *
 from fastai.vision.all import *
 
