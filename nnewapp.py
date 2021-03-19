@@ -46,3 +46,4 @@ class Predict:
 
 if __name__=='__main__':
     predictor = Predict(x)
+st.write(result.print())
