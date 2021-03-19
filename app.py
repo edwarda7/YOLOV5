@@ -17,8 +17,6 @@ class Predict:
     def __init__(self, x):
         model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
      
-        self.img = self.get_image_from_upload()
-        self.display_output()
             
             
   
