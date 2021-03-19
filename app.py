@@ -17,6 +17,7 @@ uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 class Predict:
     def __init__(self, x):
         model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
+        self.display_output()
      
             
             
