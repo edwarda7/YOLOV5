@@ -27,7 +27,6 @@ class Predict:
         return None
 
     def display_output(self):
-        st.image(self.img.to_thumb(500,500), caption='Uploaded Image')
         # Inference
         result = model(img1, size=640)  # includes NMS
         result.print()  
