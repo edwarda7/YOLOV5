@@ -7,7 +7,7 @@ from PIL import Image
 
 
 class Predict:
-    def __init__(self, filename):
+    def __init__(self, "best.pt"):
         model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= "best.pt")
         if self.img is not None:
             self.display_output()
