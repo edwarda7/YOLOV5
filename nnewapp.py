@@ -1,18 +1,17 @@
-from fastai import *
-from fastai.vision.widgets import *
-from fastai.vision.all import *
-
-import streamlit as st
-from urllib.request import urlretrieve
+import glob
 import torch
-
+from urllib.request import urlretrieve
 from PIL import Image
+from IPython.display import Image, display
+import streamlit as st
+
 
 
 
 
 x = "best.pt"
 
+im_paths = glob.glob('uploaded_file')
 
 
 
@@ -36,13 +35,15 @@ class Predict:
         
 
     def display_output(self):
-        result = model(uploaded_file, size=640)
-        result.save() 
-        result.print()
-        st.write(result.print())
-        result.render()
+        for i in range(len(im_paths)):
+            img = Image.open(im_paths[i])
+            results = model(img, size=160)  # includes NMS
+            results.print()  
+            results.save()
 
-        st.image(result.render())
+       
+        for imageName in glob.glob('uploaded_file'): #assuming JPG
+            st.image(display(Image(filename=imageName)))
  
 
 if __name__=='__main__':
