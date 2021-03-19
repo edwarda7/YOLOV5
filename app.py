@@ -1,19 +1,37 @@
-
-
+import streamlit as st
+from urllib.request import urlretrieve
 import torch
-
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='best.pt')
 
 from PIL import Image
 
-# Images
+
+
+
+
+
+
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='best.pt')
+ 
+
 img1 = Image.open('BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg')
 
-results = model(img1, size=320)
-
 # Inference
-results = model(img1, size=640)  # includes NMS
+result = model(img1, size=640)  # includes NMS
 results.print()  
-results.save()  # or .show()
+results.save() 
+  
+            
+    
+ 
+    
+st.image("results/BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
 
-# Data
+
+
+
+
+
+
+
+
+
