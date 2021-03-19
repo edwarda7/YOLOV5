@@ -3,6 +3,11 @@ from urllib.request import urlretrieve
 import torch
 
 from PIL import Image
+from PIL import *
+import PIL.Image
+
+
+
 x = "best.pt"
 
 
