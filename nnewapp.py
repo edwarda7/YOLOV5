@@ -44,8 +44,8 @@ class Predict:
             results.save()
         for imageName in glob.glob('/results/*.jpg'): 
             display(Image(filename=imageName))
-            st.image(Image(filename=imageName)
-
+            st.image(Image(filename=imageName))
+            
 if __name__=='__main__':
     predictor = Predict(x)
 
