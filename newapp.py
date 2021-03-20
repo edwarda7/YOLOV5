@@ -35,13 +35,13 @@ class Predict:
         
 
     def display_output(self):
-            im_paths = glob.glob(self.img)# uploaded might be problem
+        im_paths = glob.glob(self.img)# uploaded might be problem
 
-            for i in range(len(im_paths)):
-                img = Image.open(im_paths[i])
-                results = model(img, size=160)  # includes NMS
-                results.print()  
-                results.save()
+        for i in range(len(im_paths)):
+            img = Image.open(im_paths[i])
+            results = model(img, size=160)  # includes NMS
+            results.print()  
+            results.save()
         for imageName in glob.glob('/results/*.jpg'): 
             display(Image(filename=imageName))
             st.image(Image(filename=imageName))
