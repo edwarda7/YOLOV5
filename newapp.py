@@ -27,7 +27,8 @@ class Predict:
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
         if uploaded_file is not None:
-            return 
+            return  PILImage.create((self.img))
+
 
         return None
         
