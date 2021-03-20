@@ -11,9 +11,7 @@ from fastai.vision.all import *
 
 
 x = "best.pt"
-uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
-
-im_paths = glob.glob('uploaded_file')
+im_paths = glob.glob('uploaded_file')# uploaded might be problem
 
 
 
