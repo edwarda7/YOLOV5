@@ -32,7 +32,7 @@ class Predict:
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
-            img =  Image.open("BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
+            img =  Image.create("BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
         return None
         
         
