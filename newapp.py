@@ -1,9 +1,12 @@
+import glob
+import torch
+from urllib.request import urlretrieve
+from PIL import Image
+from IPython.display import Image, display
+import streamlit as st
+from fastai import *
 from fastai.vision.widgets import *
 from fastai.vision.all import *
-
-from pathlib import Path
-
-import streamlit as st
 
 class Predict:
     def __init__(self, filename):
