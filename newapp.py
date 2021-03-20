@@ -27,7 +27,7 @@ class Predict:
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
         if uploaded_file is not None:
-            return self.img = Image.open(uploaded_file[-1])
+            return print("?")
 
         return None
         
