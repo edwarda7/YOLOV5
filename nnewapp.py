@@ -46,12 +46,21 @@ class Predict:
             display(Image(filename=imageName))
             st.image(Image(filename=imageName))
             
-if __name__=='__main__':
-    predictor = Predict(x)
+#if __name__=='__main__':
+    #predictor = Predict(x)
     
     
-    
-    
-st.image(Image(filename=imageName))
+uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
+im_paths = glob.glob('uploaded_file')
+
+for i in range(len(im_paths)):
+    img = Image.open(im_paths[i])
+    results = model(img, size=160)  # includes NMS
+    results.print()  
+    results.save()
+for imageName in glob.glob('/results/*.jpg'): 
+    display(Image(filename=imageName))
+    st.image(Image(filename=imageName))    
+
 
 
