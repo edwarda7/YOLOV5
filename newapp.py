@@ -32,7 +32,7 @@ class Predict:
         
 
         if st.button('Classify'):
-            results = model(img, size=160)  # includes NMS
+            results = model(self.img, size=160)  # includes NMS
             results.print()  
             results.save()
             st.write(results.print())
