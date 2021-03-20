@@ -15,6 +15,7 @@ x = "best.pt"
 im_paths = glob.glob('uploaded_file')
 
 
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
 
 
 class Predict:
