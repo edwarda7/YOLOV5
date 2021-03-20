@@ -48,4 +48,10 @@ class Predict:
             
 if __name__=='__main__':
     predictor = Predict(x)
+    
+    
+    
+    
+st.image(Image(filename=imageName))
+
 
