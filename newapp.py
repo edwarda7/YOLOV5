@@ -36,7 +36,7 @@ class Predict:
         
 
     def display_output(self):
-            self.learn_inference.results = model(self.img, size=160)  # includes NMS
+            self.learn_inference.results =  self.learn_inference(self.img, size=160)  # includes NMS
             self.learn_inference.results.print()  
             self.learn_inference.results.save()
             st.image('/results/*.jpg')
