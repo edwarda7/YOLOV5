@@ -8,19 +8,21 @@ from fastai import *
 from fastai.vision.widgets import *
 from fastai.vision.all import *
 
+url = ("http://dl.dropboxusercontent.com/s/fkdy4rbf8g8wm2s/best.pt?raw=1")
+filename = "best.pt"
+urlretrieve(url,filename)
 
 
-x = "best.pt"
 
 im_paths = glob.glob('uploaded_file')
 
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= filename)
 
 
 class Predict:
     def __init__(self, filename):
-        model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= x)
+        model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= filename)
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
@@ -32,7 +34,7 @@ class Predict:
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
-            img =  Image.create("BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
+            return img =  Image.open("BloodImage_00002_jpg.rf.72d4182864da81e2fc804f5382965abc.jpg")
         return None
         
         
@@ -54,5 +56,5 @@ class Predict:
             st.write(f'Click the button to classify') 
 
 if __name__=='__main__':
-    predictor = Predict(x)
+    predictor = Predict(filename)
     
