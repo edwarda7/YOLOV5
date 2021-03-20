@@ -27,7 +27,7 @@ class Predict:
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
 
         if uploaded_file is not None:
-            return print("?")
+            return 
 
         return None
         
@@ -35,6 +35,16 @@ class Predict:
         
 
     def display_output(self):
+            im_paths = glob.glob(self.img)# uploaded might be problem
+
+            for i in range(len(im_paths)):
+            img = Image.open(im_paths[i])
+            results = model(img, size=160)  # includes NMS
+            results.print()  
+            results.save()
+        for imageName in glob.glob('/results/*.jpg'): 
+            display(Image(filename=imageName))
+            st.image(Image(filename=imageName))
             self.learn_inference.results =  self.learn_inference(self.img, size=160)  # includes NMS
             self.learn_inference.results.print()  
             self.learn_inference.results.save()
