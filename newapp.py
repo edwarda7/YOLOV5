@@ -23,6 +23,7 @@ class Predict:
         self.img = self.get_image_from_upload()
         if self.img is not None:
             self.display_output()
+            self.get_prediction()
  
             
     
