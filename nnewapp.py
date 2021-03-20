@@ -12,7 +12,6 @@ from fastai.vision.all import *
 
 x = "best.pt"
 
-im_paths = glob.glob('uploaded_file')
 
 
 
@@ -29,6 +28,8 @@ class Predict:
     @staticmethod
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
+        im_paths = glob.glob('uploaded_file')
+
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
