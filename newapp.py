@@ -41,8 +41,7 @@ class Predict:
     def display_output(self):
      
         for imageName in glob.glob('/results/*.jpg'): 
-            display(Image(filename=imageName))
-            st.image(Image(filename=imageName))
+            st.image(Image(imageName))
             
 
     def get_prediction(self):
