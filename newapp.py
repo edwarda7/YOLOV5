@@ -7,6 +7,7 @@ import streamlit as st
 from fastai import *
 from fastai.vision.widgets import *
 from fastai.vision.all import *
+model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model= "best.pt")
 
 class Predict:
     def __init__(self, filename):
