@@ -27,7 +27,6 @@ class Predict:
     @staticmethod
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
-
         if uploaded_file is not None:
             return PILImage.create((uploaded_file))
         return None
@@ -39,7 +38,7 @@ class Predict:
         for i in range(len(im_paths)):
             img = Image.open(im_paths[i])
             results = model(img, size=160)  # includes NMS
-            results.print()  
+            st.write(results.print())  
             results.save()
         for imageName in glob.glob('/results/*.jpg'): 
             display(Image(filename=imageName))
